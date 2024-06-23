@@ -5,27 +5,27 @@ import { FaLinkedinIn,FaXTwitter } from "react-icons/fa6";
 
 const BannerSection = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r f text-black mt-4 font-Sora">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r f text-black  font-Sora">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-around gap-20 items-center lg:items-start">
         <div className="lg:w-[55%] text-center lg:text-left ">
           <h1 className="text-5xl font-bold text-zinc-800">GREDX</h1>
           <h2
-            className="text-7xl text-wrap font-bold mt-4 leading-[5rem]"
+            className="text-6xl text-wrap font-bold mt-4 leading-[4.6rem]"
             style={{
               background: "linear-gradient(to right, #8c4ee2, #2d0082)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            Web Developer + UX Designer
+            Web Development + Logo Design 
           </h2>
 
           <p className="mt-6  lg:w-[85%] text-zinc-600 text-xl leading-normal my-6">
             I break down complex user experience problems to create integrity
-            focussed solutions that connect billions of people
+            focussed solutions that connect billions of people.
           </p>
           <div className="flex items-center gap-8">
-            <button className="mt-6 px-6 py-3 border border-purple-600 text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition ease-in delay-100">
+            <button className="mt-6 px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition ease-in delay-100">
               Get Started
               <HiOutlineArrowNarrowRight className="inline-block ml-2" />
             </button>
@@ -53,7 +53,7 @@ const BannerSection = () => {
           />
         </div>
       </div>
-      <div className="mt-16 flex justify-around w-full max-w-4xl text-center">
+      <div className="mt-28 flex justify-around w-full max-w-4xl  text-center">
         <div>
           <p className="text-3xl font-bold text-purple-600">14</p>
           <p className="text-zinc-600 300">Years of Experience</p>
