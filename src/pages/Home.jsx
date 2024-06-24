@@ -4,7 +4,7 @@ import WorksSection from "../components/WorksSection";
 
 export default function Home() {
   return (
-    <div className="py-32">
+    <div className="py-40">
       <BannerSection />
       <ServicesSection />
       <WorksSection />

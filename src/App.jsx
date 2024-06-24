@@ -8,7 +8,7 @@ import "./App.css"
 
 function App() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Router>
         <Navbar />
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

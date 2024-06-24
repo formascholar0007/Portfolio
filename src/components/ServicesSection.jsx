@@ -30,16 +30,16 @@ const services = [
 ];
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="p-4 h-96 font-Sora">
+  <div className="p-4 md:h-96 font-Sora">
     <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-100 transition duration-300 ease-in-out h-full flex flex-col justify-between">
-      <div className="text-8xl mb-6 text-purple-600 hover:text-red-500 transition duration-300">
+      <div className="text-6xl md:text-8xl mb-6 text-purple-600 hover:text-red-500 transition duration-300">
         {icon}
       </div>
-      <h5 className="text-3xl font-semibold mb-2 text-black">{title}</h5>
-      <p className="text-gray-700 mb-4">{description}</p>
+      <h5 className="text-xl md:text-3xl font-semibold mb-2 text-black">{title}</h5>
+      <p className="text-sm md:text-base text-gray-700 mb-4">{description}</p>
       <a
         href="single-service.html"
-        className="read-more-button text-black border-2 rounded-sm border-[#8c4ee2] w-36 p-2 hover:bg-transparent flex items-center mt-auto relative overflow-hidden"
+        className="read-more-button text-black border-2 rounded-sm border-[#8c4ee2] w-36 md:w-36 p-2 hover:bg-transparent flex items-center mt-auto relative overflow-hidden"
       >
         Read More <FaArrowUp className="ml-2" />
         <style jsx>{`
@@ -100,11 +100,11 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="services-area bg-gray-100 py-32 mt-8 font-Sora">
-      <div className="container mx-auto">
+    <section className="services-area bg-gray-100 py-16 md:py-32 mt-8 font-Sora">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2
-            className="text-6xl font-bold mb-3"
+            className="text-3xl md:text-6xl font-bold mb-3"
             style={{
               background: "linear-gradient(to right, #a361ff, #1e044e)",
               WebkitBackgroundClip: "text",
@@ -113,7 +113,7 @@ const ServicesSection = () => {
           >
             Our Best Services
           </h2>
-          <p className="text-gray-900 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-900 text-base md:text-lg max-w-xl md:max-w-3xl mx-auto">
             We put your ideas and thus your wishes in the form of a unique web
             project that inspires you and your customers.
           </p>
