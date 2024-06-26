@@ -10,6 +10,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [showToggle, setShowToggle] = useState(window.innerWidth <= 768);
+  const [activeSection, setActiveSection] = useState(null);
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -18,6 +19,16 @@ const Navbar = () => {
     setVisible(visible);
     setPrevScrollPos(currentScrollPos);
     setScrolled(currentScrollPos > 10);
+
+    // Determine which section is in view
+    const sections = ["home", "services", "works", "technologies", "testimonials", "contact"];
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(sections[i]);
+      if (section && section.offsetTop <= currentScrollPos + 200) {
+        setActiveSection(sections[i]);
+        break;
+      }
+    }
   };
 
   useEffect(() => {
@@ -38,6 +49,16 @@ const Navbar = () => {
     setShowSidebar(!showSidebar);
   };
 
+  const smoothScrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 100, // Adjust as needed
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <style>
@@ -54,12 +75,16 @@ const Navbar = () => {
             width: 0;
             height: 2px;
             display: block;
-            margin-top: 5px;
+            margin-top: 2px;
             right: 0;
             background: #8c4ee2;
             transition: width 0.5s ease, right 0.3s ease;
           }
           .nav-link:hover::after {
+            width: 100%;
+            right: 0;
+          }
+          .active-nav-link::after {
             width: 100%;
             right: 0;
           }
@@ -78,108 +103,139 @@ const Navbar = () => {
 
         <nav className="space-x-6 hidden md:flex">
           <NavLink
-            to={"/"}
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+            to="#home"
+            onClick={() => smoothScrollTo("home")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "home" ? "active-nav-link" : ""}`}
           >
             Home
           </NavLink>
-          <a
-            href="#"
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          <NavLink
+            to="#services"
+            onClick={() => smoothScrollTo("services")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "services" ? "active-nav-link" : ""}`}
           >
             Services
-          </a>
-          <a
-            href="#"
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          </NavLink>
+          <NavLink
+            to="#works"
+            onClick={() => smoothScrollTo("works")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "works" ? "active-nav-link" : ""}`}
           >
-           Work
-          </a>
-          <a
-            href="#"
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+            Works
+          </NavLink>
+          <NavLink
+            to="#technologies"
+            onClick={() => smoothScrollTo("technologies")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "technologies" ? "active-nav-link" : ""}`}
           >
             Tech
-          </a>
-          <a
-            href="#"
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          </NavLink>
+          <NavLink
+            to="#testimonials"
+            onClick={() => smoothScrollTo("testimonials")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "testimonials" ? "active-nav-link" : ""}`}
           >
             Testimonials
-          </a>
-          <a
-            href="#"
-            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          </NavLink>
+          <NavLink
+            to="#contact"
+            onClick={() => smoothScrollTo("contact")}
+            className={`nav-link text-black md:text-sm lg:text-xl hover:text-purple-400 ${activeSection === "contact" ? "active-nav-link" : ""}`}
           >
             Contact
-          </a>
+          </NavLink>
         </nav>
+
         <div className="flex items-center space-x-4 text-white hover:text-black">
-          <div className="lg:text-lg text-sm mr-2  rounded-full flex items-center transition ease-in-out delay-100 md:px-8 md:py-4 px-4 py-4 bg-gradient-to-r from-[#8c5be6] to-[#2a1454]">
+          <div className="lg:text-lg text-sm mr-2 rounded-full flex items-center transition ease-in-out delay-100 md:px-8 md:py-4 px-4 py-4 bg-gradient-to-r from-[#8c5be6] to-[#2a1454]">
             <IoCall className="visible" />
-            <NavLink to={"/contact"} className="ml-3 font-semibold">
+            <NavLink
+              to="#contact"
+              onClick={() => smoothScrollTo("contact")}
+              className="ml-3 font-semibold"
+            >
               Get In touch
             </NavLink>
           </div>
         </div>
+
         {showToggle &&
           (showSidebar ? (
             <HiX
-              className="text-2xl  text-purple-400 cursor-pointer md:hidden"
+              className="text-2xl text-purple-400 cursor-pointer md:hidden"
               onClick={toggleSidebar}
               size={40}
             />
           ) : (
             <HiMenuAlt3
-              className="text-2xl  text-purple-400 cursor-pointer md:hidden"
+              className="text-2xl text-purple-400 cursor-pointer md:hidden"
               onClick={toggleSidebar}
               size={40}
             />
           ))}
       </header>
+
       {showSidebar && (
-        <div className="fixed top-[128px] inset-x-0 md:inset-auto h-full bg-[#2a1454]  z-50">
+        <div className="fixed top-[128px] inset-x-0 md:inset-auto h-full bg-[#2a1454] z-50">
           <div className="flex justify-start p-4">
             <nav className="flex flex-col space-y-6 uppercase p-4 font-Sora">
               <NavLink
-                to="/"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#home"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("home");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "home" ? "active-nav-link" : ""}`}
               >
                 Home
               </NavLink>
               <NavLink
-                to="/services"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#services"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("services");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "services" ? "active-nav-link" : ""}`}
               >
                 Services
               </NavLink>
               <NavLink
-                to="/works"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#works"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("works");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "works" ? "active-nav-link" : ""}`}
               >
                 Works
               </NavLink>
               <NavLink
-                to="/technolgy"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#technologies"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("technologies");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "technologies" ? "active-nav-link" : ""}`}
               >
                 Tech
               </NavLink>
               <NavLink
-                to="/testimonials"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#testimonials"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("testimonials");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "testimonials" ? "active-nav-link" : ""}`}
               >
                 Testimonials
               </NavLink>
               <NavLink
-                to="/contact"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
+                to="#contact"
+                onClick={() => {
+                  toggleSidebar();
+                  smoothScrollTo("contact");
+                }}
+                className={`text-white hover:text-purple-400 text-xl ${activeSection === "contact" ? "active-nav-link" : ""}`}
               >
                 Contact
               </NavLink>

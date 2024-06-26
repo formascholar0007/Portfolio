@@ -3,25 +3,33 @@ import { FaArrowUp, FaPaintBrush, FaPenFancy } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DiRedis } from "react-icons/di";
+import { HiDevicePhoneMobile } from "react-icons/hi2";
+import { FaLaptopCode } from "react-icons/fa6";
 
 const services = [
   {
     id: 1,
-    icon: <DiRedis />,
+    icon: <FaLaptopCode />,
     title: "Web Development",
     description:
       "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
   },
   {
     id: 2,
+    icon: <HiDevicePhoneMobile />,
+    title: "App Development",
+    description:
+      "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
+  },
+  {
+    id: 3,
     icon: <FaPaintBrush />,
     title: "Logo Design",
     description:
       "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
   },
   {
-    id: 3,
+    id: 4,
     icon: <FaPenFancy />,
     title: "UX/UI Design",
     description:

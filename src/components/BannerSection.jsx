@@ -6,7 +6,7 @@ import MetricsSection from "./MetricsSection";
 
 const BannerSection = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r text-black font-Sora px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r text-black font-Sora px-4 sm:px-6 lg:px-8 md:py-20 py-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-around gap-10 lg:gap-20 items-center lg:items-start">
         <div className="lg:w-[42%] mt-6 sm:mt-8 lg:mt-0 flex justify-center lg:justify-end order-1 lg:order-2">
           <img

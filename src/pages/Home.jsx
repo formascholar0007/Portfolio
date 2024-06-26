@@ -10,14 +10,27 @@ import WorksSection from "../components/WorksSection";
 export default function Home() {
   return (
     <div className="pt-40">
-      <BannerSection />
-      <ServicesSection />
-      <WhyChooseUs />
-      <WorksSection />
-      <Technologies />
-      <Testimonials />
-      <TeamSection />
-      <ContactForm />
+      <div id="home">
+        <BannerSection />
+      </div>
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="works">
+        <WorksSection />
+      </div>
+      <div id="technologies">
+        <Technologies />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="team">
+        <TeamSection />
+      </div>
+      <div id="contact">
+        <ContactForm />
+      </div>
     </div>
   );
 }

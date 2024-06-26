@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/GX.png";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
@@ -6,13 +6,38 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+    setVisible(visible);
+    setPrevScrollPos(currentScrollPos);
+    setScrolled(currentScrollPos > 10);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowToggle(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [prevScrollPos]);
   return (
     <section className="pt-8 pb-7 bg-gray-900 font-Sora">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between pb-2 border-b border-gray-500 gap-8">
-          <a href="https://pagedone.io/" className="">
+          <NavLink to="/" onClick={() => smoothScrollTo("home")}>
             <img src={logo} alt="GREDX" className="w-60" />
-          </a>
+          </NavLink>
           <div className="flex items-center gap-4">
             <a
               href="javascript:;"
@@ -41,43 +66,47 @@ function Footer() {
           </div>
         </div>
         <div className="py-14 flex flex-col lg:flex-row justify-between gap-8 border-b border-gray-500">
-          <div className="w-full max-lg:mx-auto flex flex-col sm:flex-row max-lg:items-center max-lg:justify-between gap-6 md:gap-12 lg:gap-24">
-            <div className="">
+          <div className="w-full max-lg:mx-auto flex flex-col sm:flex-row max-lg:items-center max-lg:justify-between gap-6 md:gap-12 lg:gap-60">
+            <div>
               <h6 className="text-lg font-medium text-white mb-7 max-lg:text-center">
                 COMPANY
               </h6>
               <ul className="flex flex-col max-lg:items-center gap-6">
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#home"
+                    onClick={() => smoothScrollTo("home")}
                     className="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#services"
+                    onClick={() => smoothScrollTo("home")}
                     className="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     Services
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#works"
+                    onClick={() => smoothScrollTo("home")}
                     className="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     Work
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#technologies"
+                    onClick={() => smoothScrollTo("home")}
                     className="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     Tech at GREDX
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -87,41 +116,45 @@ function Footer() {
               </h6>
               <ul className="flex flex-col gap-6 max-lg:items-center">
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#services"
+                    onClick={() => smoothScrollTo("services")}
                     className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     {" "}
                     Website Development
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#services"
+                    onClick={() => smoothScrollTo("services")}
                     className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     Logo Design
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#services"
+                    onClick={() => smoothScrollTo("services")}
                     className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     App Development
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="javascript:;"
+                  <NavLink
+                    to="#services"
+                    onClick={() => smoothScrollTo("services")}
                     className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-purple-600 focus-within:outline-0 focus-within:text-purple-600"
                   >
                     UI/UX Design
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
-            <div className="">
+            {/* <div className="">
               <h6 className="text-lg font-medium text-white mb-7 max-lg:text-center">
                 Resources
               </h6>
@@ -143,7 +176,7 @@ function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
           <div className="w-full lg:max-w-md max-lg:mx-auto ">
             <h6 className="text-lg font-medium text-white mb-7">GET CONTACT</h6>
@@ -196,17 +229,26 @@ function Footer() {
         </div>
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-5 pt-7">
           <span className="text-sm font-normal text-gray-400">
-            <a href="https://pagedone.io/" className="">
-              ©gredx
+            <a
+              href="#home"
+              onClick={() => {
+                smoothScrollTo("home");
+              }}
+              className=""
+            >
+              ©GREDX
             </a>{" "}
             2024, All rights reserved.
           </span>
           <div className="relative  text-gray-500 focus-within:text-gray-900 ">
             <div className="absolute inset-y-0 right-6 flex items-center pl-3 pointer-events-none ">
-             <FaRegCircleQuestion size={18} />
+              <FaRegCircleQuestion size={18} />
             </div>
             <NavLink
-              to="/askQuestion"
+              to="#contact"
+              onClick={() => {
+                smoothScrollTo("contact");
+              }}
               id="default-search"
               className="block w-full lg:min-w-[448px] pr-12 pl-6 py-3 text-base font-normal shadow-xs text-gray-50 bg-transparent border border-gray-700 rounded-full placeholder-gray-400 focus:outline-none leading-relaxed transition-all duration-500 "
             >
