@@ -75,24 +75,42 @@ const Navbar = () => {
         <div className="w-[45%] md:w-[25%]">
           <img src={logo} alt="Logo" className="h-32 md:h-40" />
         </div>
-       
+
         <nav className="space-x-6 hidden md:flex">
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
             Home
           </a>
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
-            About
-          </a>
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
             Services
           </a>
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
-            Pages
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
+           Work
           </a>
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
-            Projects
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
+            Tech
           </a>
-          <a href="#" className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400">
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
+            Testimonials
+          </a>
+          <a
+            href="#"
+            className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
+          >
             Contact
           </a>
         </nav>
@@ -104,8 +122,8 @@ const Navbar = () => {
             </NavLink>
           </div>
         </div>
-        {showToggle && (
-          showSidebar ? (
+        {showToggle &&
+          (showSidebar ? (
             <HiX
               className="text-2xl  text-purple-400 cursor-pointer md:hidden"
               onClick={toggleSidebar}
@@ -117,8 +135,7 @@ const Navbar = () => {
               onClick={toggleSidebar}
               size={40}
             />
-          )
-        )}
+          ))}
       </header>
       {showSidebar && (
         <div className="fixed top-[128px] inset-x-0 md:inset-auto h-full bg-[#2a1454]  z-50">
@@ -132,13 +149,6 @@ const Navbar = () => {
                 Home
               </NavLink>
               <NavLink
-                to="/about"
-                className="text-white hover:text-purple-400 text-xl"
-                onClick={toggleSidebar}
-              >
-                About
-              </NavLink>
-              <NavLink
                 to="/services"
                 className="text-white hover:text-purple-400 text-xl"
                 onClick={toggleSidebar}
@@ -146,18 +156,25 @@ const Navbar = () => {
                 Services
               </NavLink>
               <NavLink
-                to="/pages"
+                to="/works"
                 className="text-white hover:text-purple-400 text-xl"
                 onClick={toggleSidebar}
               >
-                Pages
+                Works
               </NavLink>
               <NavLink
-                to="/projects"
+                to="/technolgy"
                 className="text-white hover:text-purple-400 text-xl"
                 onClick={toggleSidebar}
               >
-                Projects
+                Tech
+              </NavLink>
+              <NavLink
+                to="/testimonials"
+                className="text-white hover:text-purple-400 text-xl"
+                onClick={toggleSidebar}
+              >
+                Testimonials
               </NavLink>
               <NavLink
                 to="/contact"

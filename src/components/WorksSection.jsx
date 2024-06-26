@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProjectCard from "./ProjectCard"; // Update the path as per your file structure
+import ProjectCard from "./ProjectCard"; 
 
 const WorksSection = () => {
   const [filter, setFilter] = useState("All");
