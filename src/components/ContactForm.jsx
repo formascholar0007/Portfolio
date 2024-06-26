@@ -27,7 +27,7 @@ const ContactForm = () => {
                 type="text"
                 name="fname"
                 placeholder="First name"
-                className="w-full p-3 border-2 border-gray-500  rounded-md"
+                className="w-full p-3 border-2 border-gray-500 bg-gray-100  rounded-md"
                 required
               />
             </div>
@@ -36,7 +36,7 @@ const ContactForm = () => {
                 type="text"
                 name="lname"
                 placeholder="Last name"
-                className="w-full p-3 border-2 border-gray-500  rounded-md"
+                className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
               />
             </div>
             <div className="form_group">
@@ -44,7 +44,7 @@ const ContactForm = () => {
                 type="email"
                 name="email"
                 placeholder="Email address"
-                className="w-full p-3 border-2 border-gray-500  rounded-md"
+                className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
                 required
               />
             </div>
@@ -53,7 +53,7 @@ const ContactForm = () => {
                 type="tel"
                 name="phone"
                 placeholder="Phone number"
-                className="w-full p-3 border-2 border-gray-500 rounded"
+                className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded"
                 required
               />
             </div>
@@ -61,7 +61,7 @@ const ContactForm = () => {
           <div className="form_group">
             <select
               name="Services"
-              className="w-full p-3 border-2 border-gray-500  rounded-md"
+              className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
               required
             >
               <option value="">—Please choose an option—</option>
@@ -75,7 +75,7 @@ const ContactForm = () => {
             <textarea
               name="message"
               placeholder="Message"
-              className="w-full p-3 border-2 border-gray-500  rounded-md"
+              className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
               rows="5"
               required
             ></textarea>
@@ -124,7 +124,7 @@ const ContactForm = () => {
             </div>
           </li>
           <li className="flex items-center gap-6">
-            <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
+            <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454]  p-4 rounded-full">
               <FaMapMarkerAlt className="text-white" size={25}/>
             </div>
 

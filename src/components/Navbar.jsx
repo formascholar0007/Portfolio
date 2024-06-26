@@ -77,12 +77,12 @@ const Navbar = () => {
         </div>
 
         <nav className="space-x-6 hidden md:flex">
-          <a
-            href="#"
+          <NavLink
+            to={"/"}
             className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"
           >
             Home
-          </a>
+          </NavLink>
           <a
             href="#"
             className="nav-link text-black md:text-sm lg:text-xl hover:text-purple-400"

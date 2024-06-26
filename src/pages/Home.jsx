@@ -9,7 +9,7 @@ import WorksSection from "../components/WorksSection";
 
 export default function Home() {
   return (
-    <div className="py-40">
+    <div className="pt-40">
       <BannerSection />
       <ServicesSection />
       <WhyChooseUs />
