@@ -104,7 +104,7 @@ const TeamSection = () => {
         <Slider {...settings}>
           {teamMembers.map((member, index) => (
             <div key={index} className="p-4">
-              <div className="bg-zinc-900 text-white rounded overflow-hidden shadow-lg relative group px-5 py-5">
+              <div className="bg-gray-50 text-purple-600 rounded overflow-hidden shadow-lg relative group px-5 py-5">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -118,31 +118,31 @@ const TeamSection = () => {
                     </div>
                     <div className="relative ">
                       <FaShareAlt
-                        className="text-white group-hover:text-zinc-900"
+                        className="text-purple-600 group-hover:text-gray-50"
                         size={22}
                       />
-                      <div className="absolute bottom-full w-full flex flex-col bg-zinc-900 rounded px-5 py-2 items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-full w-full flex flex-col bg-gray-100 rounded px-5 py-2 items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <a href={member.social.facebook} target="_blank">
                           <FaFacebook
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
                         <a href={member.social.twitter} target="_blank">
                           <FaXTwitter
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
                         <a href={member.social.linkedin} target="_blank">
                           <FaLinkedin
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
                         <a href={member.social.instagram} target="_blank">
                           <FaSquareInstagram
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
