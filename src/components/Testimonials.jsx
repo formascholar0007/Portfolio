@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useIntersectionObserver from "./useIntersectionObserver";
+import "animate.css";
 
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -92,33 +94,66 @@ const Testimonials = () => {
     ],
   };
 
+  const [sectionRef, isVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
+
   return (
-    <section className="bg-zinc-900 text-gray-100 sm:px-8 py-20 font-Sora">
+    <section
+      ref={sectionRef}
+      className={`bg-zinc-900 text-gray-100 sm:px-8 py-20 font-Sora ${
+        isVisible ? "animate__animated animate__fadeIn" : ""
+      }`}
+    >
       <div className="text-center w-full"></div>
       <div>
         <h2
-          className="text-center text-gray-800 text-4xl   max-w-xl  mx-auto lg:text-6xl font-bold leading-tight"
+          ref={sectionRef}
+          className={`text-center text-gray-800 text-4xl max-w-xl mx-auto lg:text-6xl font-bold leading-tight ${
+            isVisible
+              ? "animate__animated animate__fadeIn animate__slow animate__delay-1s"
+              : ""
+          }`}
           style={{
             background: "linear-gradient(to right, #c098f8, #42129d)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
         >
-       What client Says?
+          What client Says?
         </h2>
-        <div className="mb-5 mt-2 mx-auto w-44 h-1 border-b-2 border-purple-500"></div>
-        <div className="text-center mx-2 md:mx-0 text-gray-200 font-light">
+        <div
+          ref={sectionRef}
+          className={`mb-5 mt-2 mx-auto w-44 h-1 border-b-2 border-purple-500 ${
+            isVisible
+              ? "animate__animated animate__fadeIn animate__slow animate__delay-2s"
+              : ""
+          }`}
+        ></div>
+        <div
+          ref={sectionRef}
+          className={`text-center mx-2 md:mx-0 text-gray-200 font-light ${
+            isVisible
+              ? "animate__animated animate__fadeIn animate__slow animate__delay-2s"
+              : ""
+          }`}
+        >
           Here are what some of our amazing customers are saying ...
         </div>
       </div>
       <div className="relative max-w-screen-xl mt-8 px-8 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gradient-to-r from-purple-900 to-gray-900 text-gray-100 sm:rounded-lg shadow-lg">
-        <div className="absolute right-0 bottom-0 w-80 h-56 bg-gradient-to-r from-purple-600 to-purple-950 "></div>
+        <div className="absolute right-0 bottom-0 w-80 h-56 bg-gradient-to-r from-purple-600 to-purple-950"></div>
         <div className="relative">
           <Slider {...settings}>
             {testimonials.map((testimonial) => (
               <div
+                ref={sectionRef}
                 key={testimonial.id}
-                className="relative mx-auto mt-8 rounded-lg border-2 shadow max-w-sm p-10 bg-gray-100 text-gray-700 leading-snug flex flex-col justify-between"
+                className={`relative mx-auto mt-8 rounded-lg border-2 shadow max-w-sm p-10 bg-gray-100 text-gray-700 leading-snug flex flex-col justify-between ${
+                  isVisible
+                    ? "animate__animated animate__fadeInUp animate__slow"
+                    : ""
+                }`}
               >
                 <div className="-ml-4">
                   <svg

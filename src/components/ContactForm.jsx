@@ -1,10 +1,22 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import useIntersectionObserver from "./useIntersectionObserver"; // Assuming you have this hook defined
 
 const ContactForm = () => {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center lg:gap-32 min-h-screen bg-gray-100 lg:py-24 py-10 font-Sora">
-      <div className="w-full md:w-1/2 lg:w-2/5 bg-white px-10 py-12 rounded-2xl shadow-lg">
+    <div
+      ref={sectionRef}
+      className="flex flex-col md:flex-row items-center justify-center lg:gap-32 min-h-screen bg-gray-100 lg:py-24 py-10 font-Sora"
+    >
+      <div
+        className={`w-full md:w-1/2 lg:w-2/5 bg-white px-10 py-12 rounded-2xl shadow-lg ${
+          isVisible
+            ? "animate__animated animate__fadeInLeft animate__slow "
+            : ""
+        }`}
+      >
         <h2
           className="text-4xl lg:text-5xl font-bold mb-4"
           style={{
@@ -65,11 +77,11 @@ const ContactForm = () => {
               required
             >
               <option value="">—Please choose an option—</option>
-              <option value="Branding Design">Branding Design</option>
-              <option value="Web Design">Web Design</option>
+              <option value="Web Design">Web Development</option>
+              <option value="App Design">App Development</option>
+              <option value="Branding Design">Logo Design</option>
               <option value="UI/UX Design">UI/UX Design</option>
-              <option value="App Design">App Design</option>
-              <option value=" Have a question"> Have a question</option>
+              <option value="Have a question">Have a question</option>
             </select>
           </div>
           <div className="form_group">
@@ -92,11 +104,17 @@ const ContactForm = () => {
         </form>
       </div>
 
-      <div className="mt-8 md:mt-0 md:ml-8">
+      <div
+        className={`mt-8 md:mt-0 md:ml-8 ${
+          isVisible
+            ? "animate__animated animate__fadeInRight animate__slow  animate__delay-1s"
+            : ""
+        }`}
+      >
         <ul className="space-y-12">
           <li className="flex items-center gap-6">
             <div className="bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
-              <FaPhoneAlt className="text-white" size={25}/>
+              <FaPhoneAlt className="text-white" size={25} />
             </div>
 
             <div>
@@ -111,7 +129,7 @@ const ContactForm = () => {
           </li>
           <li className="flex items-center gap-6">
             <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
-              <FaEnvelope className="text-white" size={25}/>
+              <FaEnvelope className="text-white" size={25} />
             </div>
 
             <div>
@@ -120,18 +138,21 @@ const ContactForm = () => {
                 href="mailto:gerolddesign@mail.com"
                 className="text-purple-900 font-semibold text-lg hover:text-purple-500"
               >
-               gredx.official@gmail.com
+                gredx.official@gmail.com
               </a>
             </div>
           </li>
           <li className="flex items-center gap-6">
             <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454]  p-4 rounded-full">
-              <FaMapMarkerAlt className="text-white" size={25}/>
+              <FaMapMarkerAlt className="text-white" size={25} />
             </div>
 
             <div>
               <p className="text-gray-800 mb-1">Address</p>
-              <a href="#" className="text-purple-900 font-semibold text-lg hover:text-purple-500">
+              <a
+                href="#"
+                className="text-purple-900 font-semibold text-lg hover:text-purple-500"
+              >
                 Dehradun <br /> Uttarakhand, India
               </a>
             </div>
