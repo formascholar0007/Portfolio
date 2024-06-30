@@ -16,6 +16,9 @@ export default function Home() {
       <div id="services">
         <ServicesSection />
       </div>
+      <div id="services">
+        <WhyChooseUs />
+      </div>
       <div id="works">
         <WorksSection />
       </div>
