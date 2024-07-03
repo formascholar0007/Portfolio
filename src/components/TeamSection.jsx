@@ -114,9 +114,10 @@ const TeamSection = () => {
               : ""
           }`}
         >
-          Praesent ut orci sodales, cursus mauris at, fringilla mi. Quisque
-          feugiat, libero vel pulvinar accumsan, mauris nulla malesuada dolor,
-          at varius mauris magna nec felis. In congue elit ligula.
+          At GREDX, our strength lies in our people. Our team is a dynamic blend
+          of creative minds and technical experts, all driven by a shared
+          passion for innovation and excellence. Get to know the professionals
+          who are dedicated to turning your ideas into reality.
         </p>
         <Slider {...settings}>
           {teamMembers.map((member, index) => (

@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HiDevicePhoneMobile } from "react-icons/hi2";
 import { FaLaptopCode } from "react-icons/fa6";
-import useIntersectionObserver from './useIntersectionObserver'; // import the custom hook
+import useIntersectionObserver from './useIntersectionObserver';
 
 const services = [
   {
@@ -13,28 +13,28 @@ const services = [
     icon: <FaLaptopCode />,
     title: "Web Development",
     description:
-      "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
+      "We build responsive, scalable, and secure web applications that drive engagement and deliver results.",
   },
   {
     id: 2,
     icon: <HiDevicePhoneMobile />,
     title: "App Development",
     description:
-      "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
+      "Our team creates intuitive and high-performance mobile apps for both iOS and Android platforms, ensuring a seamless user experience.",
   },
   {
     id: 3,
     icon: <FaPaintBrush />,
     title: "Logo Design",
     description:
-      "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
+      "We craft memorable and impactful logos that reflect your brand's identity and vision.",
   },
   {
     id: 4,
     icon: <FaPenFancy />,
     title: "UX/UI Design",
     description:
-      "Pellentesque sit amet urna justo. Fusce velit nibh commo iaculis vestibulum condimentum.",
+      "Our user-centric design approach enhances usability and aesthetics, making your digital products not only beautiful but also easy to navigate.",
   },
 ];
 

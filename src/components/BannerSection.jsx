@@ -6,11 +6,7 @@ import MetricsSection from "./MetricsSection";
 import "animate.css";
 
 const BannerSection = () => {
-  const textOptions = [
-    "App Development",
-    "Logo Design",
-    "UI/UX Design",
-  ];
+  const textOptions = ["App Development", "Logo Design", "UI/UX Design"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   useEffect(() => {
@@ -46,8 +42,10 @@ const BannerSection = () => {
             Web development + <span>{textOptions[currentTextIndex]}</span>
           </h2>
           <p className="mt-4 sm:mt-6 lg:mt-8 lg:w-[85%] text-zinc-600 text-lg sm:text-xl leading-relaxed sm:leading-normal my-4 sm:my-6 animate__animated animate__bounceIn animate__slow">
-            I break down complex user experience problems to create integrity
-            focussed solutions that connect billions of people.
+            At GREDX, we transform ideas into exceptional digital experiences.
+            Whether you're looking to develop a cutting-edge web application, an
+            innovative mobile app, or a captivating logo, we provide end-to-end
+            solutions tailored to your unique needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center md:justify-center lg:justify-start gap-4 sm:gap-8">
             <button className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 border-2 border-purple-600 text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition ease-in delay-100 animate__animated animate__bounceIn animate__slow  animate__delay-1s">
