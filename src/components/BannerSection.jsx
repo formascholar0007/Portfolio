@@ -83,7 +83,7 @@ const BannerSection = () => {
           </div>
         </div>
       </div>
-      <MetricsSection />
+      {/* <MetricsSection /> */}
     </div>
   );
 };

@@ -21,7 +21,7 @@ function MetricsSection() {
   }, [isVisible]);
 
   const startCountAnimation = () => {
-    animateCount(5, setExperienceCount, experienceRef); // Example value for experience
+    animateCount(2, setExperienceCount, experienceRef); // Example value for experience
     animateCount(500, setProjectsCount, projectsRef);   // Example value for projects
     animateCount(1000, setClientsCount, clientsRef);    // Example value for clients
   };
