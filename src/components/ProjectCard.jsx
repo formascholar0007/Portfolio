@@ -1,9 +1,9 @@
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 
-const ProjectCard = ({ imageUrl, title, description }) => {
+const ProjectCard = ({ imageUrl, title, description, link }) => {
   return (
-    <div className="relative group">
+    <a href={link} target="_blank" rel="noopener noreferrer" className="block relative group">
       <img
         src={imageUrl}
         alt="Project Image"
@@ -13,10 +13,10 @@ const ProjectCard = ({ imageUrl, title, description }) => {
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 md:mb-3">{title}</h3>
         <p className="text-sm sm:text-base md:text-lg">{description}</p>
         <span className="absolute top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8">
-          <MdArrowOutward size={24} sm:size={32} md:size={40} />
+          <MdArrowOutward size={24} className="sm:size={32} md:size={40}" />
         </span>
       </div>
-    </div>
+    </a>
   );
 };
 

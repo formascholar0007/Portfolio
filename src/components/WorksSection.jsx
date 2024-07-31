@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import useIntersectionObserver from "./useIntersectionObserver";
+import firstProject from '../assets/firstProject.png';
+import secondProject from '../assets/secondProject.png';
+import thirdProject from '../assets/thirdProject.png';
+import fourthProject from '../assets/fourthProject.png';
 
 const WorksSection = () => {
   const [filter, setFilter] = useState("All");
@@ -14,34 +18,35 @@ const WorksSection = () => {
 
   const projects = [
     {
-      imageUrl:
-        "https://bootstrapmade.com/content/templatefiles/PhotoFolio/PhotoFolio-bootstrap-website-template-md.webp",
-      title: "Deloitte",
-      description: "Project was about precision and information.",
+      imageUrl: firstProject,
+      title: "Write Well Book Publisher",
+      description: "Book Publisher Website",
       category: "Websites",
+      link: "https://writewellbookpublisher.in/"
     },
     {
-      imageUrl:
-        "https://w3layouts.com/wp-content/uploads/2023/10/UI-Portfolio-Website-Template-scaled-1.jpg",
-      title: "New Age",
-      description: "Project was about precision and information.",
+      imageUrl: thirdProject,
+      title: "Dietitian Deepshikha Garg",
+      description: "Dietitian Website",
       category: "Logo",
+      link: "https://www.dietitiandeepshikhagarg.com/"
     },
     {
-      imageUrl:
-        "https://essential-addons.com/wp-content/uploads/2023/12/image-2.jpeg",
-      title: "New Age",
-      description: "Project was about precision and information.",
+      imageUrl: fourthProject,
+      title: "Architect",
+      description: "Website Related To Architect",
       category: "Websites",
+      link: "https://best-architect-near-me.vercel.app/"
     },
     {
-      imageUrl:
-        "https://essential-addons.com/wp-content/uploads/2024/01/portfolio-tempalte-sites-831.png",
-      title: "New Age",
-      description: "Project was about precision and information.",
+      imageUrl: secondProject,
+      title: "Article Book Publisher",
+      description: "Book Publisher Website",
       category: "UX/UI",
+      link: "https://articalbookpublication.com/"
     },
   ];
+  
 
   const filteredProjects =
     filter === "All"
@@ -104,16 +109,18 @@ const WorksSection = () => {
           UX/UI
         </button>
       </div>
-      <div ref={sectionRef}   className={`grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-20  ${isVisible ? "animate__animated animate__fadeIn animate__slow animate__delay-1s" : ""} `}>
-        {filteredProjects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            imageUrl={project.imageUrl}
-            title={project.title}
-            description={project.description}
-          />
-        ))}
-      </div>
+      <div ref={sectionRef} className={`grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-20 ${isVisible ? "animate__animated animate__fadeIn animate__slow animate__delay-1s" : ""}`}>
+  {filteredProjects.map((project, index) => (
+    <ProjectCard
+      key={index}
+      imageUrl={project.imageUrl}
+      title={project.title}
+      description={project.description}
+      link={project.link}
+    />
+  ))}
+</div>
+
     </div>
   );
 };
