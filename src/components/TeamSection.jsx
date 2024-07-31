@@ -17,10 +17,9 @@ const teamMembers = [
     position: "Software Developer",
     image: Ayush,
     social: {
-      linkedin: "https://www.linkedin.com/",
-      twitter: "https://twitter.com/",
-      facebook: "https://www.facebook.com/",
-      instagram: "https://www.instagram.com/",
+      linkedin: "https://www.linkedin.com/in/ayush-butola-655456270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      facebook: "https://www.facebook.com/profile.php?id=61561366654389",
+      instagram: "https://www.instagram.com/ayush__butola_07_10?igsh=MWRzcXJyMml1ZXk4cQ==",
     },
   },
   {
@@ -28,10 +27,9 @@ const teamMembers = [
     position: "Software Developer",
     image: rishabh,
     social: {
-      linkedin: "https://www.linkedin.com/",
-      twitter: "https://twitter.com/",
-      facebook: "https://www.facebook.com/",
-      instagram: "https://www.instagram.com/",
+      linkedin: "https://www.linkedin.com/in/rishabhbhatt99?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      facebook: "https://www.facebook.com/profile.php?id=61561366654389",
+      instagram: "https://www.instagram.com/rishabhbhatt412?igsh=dWNhYjFneW1ndTNq",
     },
   },
   {
@@ -39,10 +37,9 @@ const teamMembers = [
     position: "Social Media Manager",
     image: yogesh,
     social: {
-      linkedin: "https://www.linkedin.com/",
-      twitter: "https://twitter.com/",
-      facebook: "https://www.facebook.com/",
-      instagram: "https://www.instagram.com/",
+      linkedin: "https://www.linkedin.com/in/yogesh-singh-a80900278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      facebook: "https://www.facebook.com/profile.php?id=61561366654389",
+      instagram: "https://www.instagram.com/pahadi_bhula_uk_17/",
     },
   },
 ];
@@ -159,16 +156,7 @@ const TeamSection = () => {
                             size={22}
                           />
                         </a>
-                        <a
-                          href={member.social.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaXTwitter
-                            className="text-gray-600 my-2 hover:text-purple-600"
-                            size={22}
-                          />
-                        </a>
+                      
                         <a
                           href={member.social.linkedin}
                           target="_blank"
