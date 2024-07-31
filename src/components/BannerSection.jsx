@@ -54,7 +54,8 @@ const BannerSection = () => {
             </button>
             <div className="flex justify-center lg:justify-start space-x-4 mt-4 sm:mt-5">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61561366654389"
+                target={"_blank"}
                 className="text-purple-600 hover:text-white border hover:bg-purple-600 transition ease-in delay-100 border-purple-600 rounded-full p-2  animate__animated animate__bounceIn animate__slow  animate__delay-1s"
               >
                 <FaFacebookF size={24} />
@@ -66,7 +67,8 @@ const BannerSection = () => {
                 <FaLinkedinIn size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/gred__x?utm_source=qr&igsh=MW9nZHAyY3ZqcDB4ZA==" 
+                target={"_blank"}
                 className="text-purple-600 hover:text-white hover:bg-purple-600 border border-purple-600 transition ease-in delay-100 rounded-full p-2  animate__animated animate__bounceIn animate__slow  animate__delay-2s"
               >
                 <FaInstagram size={24} />

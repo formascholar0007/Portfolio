@@ -26,15 +26,15 @@ const Technologies = () => {
       name: "WordPress",
       icon: wordpressNoColor,
       hoveredIcon: wordpressColor,
-      score: "99%",
+      score: "40%",
     },
     {
       name: "React",
       icon: reactNoColor,
       hoveredIcon: reactColor,
-      score: "89%",
+      score: "95%",
     },
-    { name: "JavaScript", icon: jsNoColor, hoveredIcon: jsColor, score: "93%" },
+    { name: "JavaScript", icon: jsNoColor, hoveredIcon: jsColor, score: "99%" },
   ];
 
   const iconCards = [
@@ -160,7 +160,7 @@ const Technologies = () => {
                 >
                   {card.icon}
                 </div>
-                <p className="text-primary text-2xl font-bold">85%</p>
+                <p className="text-primary text-2xl font-bold">90%</p>
               </div>
               <p className="text-xl mt-5 font-semibold text-purple-500">
                 {card.name}
