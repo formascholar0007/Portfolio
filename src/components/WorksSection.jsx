@@ -43,7 +43,7 @@ const WorksSection = () => {
       title: "Article Book Publisher",
       description: "Book Publisher Website",
       category: "UX/UI",
-      link: "https://articalbookpublication.com/"
+      link: "https://articalbookpublication.com/ "
     },
   ];
   
