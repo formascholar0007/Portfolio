@@ -44,34 +44,30 @@ const Testimonials = () => {
     {
       id: 1,
       text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
-      author: "David H. Hansson",
-      role: "CTO, Boosting Metabolism",
-      avatar: "https://avatars2.githubusercontent.com/u/2741?s=64&v=4",
-      url: "https://timerse.com/7-steps-to-boost-your-metabolism/",
+      author: "Dt. Deepshikha Garg",
+      role: "distinguished dietician",
+      avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
     {
       id: 2,
       text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
       author: "Dan Abramov",
       role: "Creator, Java",
-      avatar: "https://avatars0.githubusercontent.com/u/810438?s=100",
-      url: "https://swift.org/",
+      avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
     {
       id: 3,
       text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
       author: "Dan Abramov",
       role: "Creator, Java",
-      avatar: "https://avatars0.githubusercontent.com/u/810438?s=100",
-      url: "https://swift.org/",
+      avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
     {
       id: 4,
       text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
       author: "Dan Abramov",
       role: "Creator, Java",
-      avatar: "https://avatars0.githubusercontent.com/u/810438?s=100",
-      url: "https://swift.org/",
+      avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
   ];
 
@@ -184,13 +180,8 @@ const Testimonials = () => {
                     <div className="ml-4">
                       <div className="font-bold">{testimonial.author}</div>
                       <div className="text-sm text-gray-600 mt-1">
-                        {testimonial.role},{" "}
-                        <a
-                          href={testimonial.url}
-                          className="text-purple-500 hover:text-purple-900"
-                        >
-                          {testimonial.role}
-                        </a>
+                        {testimonial.role}
+                       
                       </div>
                     </div>
                   </div>
