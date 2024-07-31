@@ -22,7 +22,7 @@ const BannerSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-around gap-10 lg:gap-20 items-center lg:items-start">
         <div className="lg:w-[42%] mt-6 sm:mt-8 lg:mt-0 flex justify-center lg:justify-end order-1 lg:order-2 animate__animated animate__bounceIn animate__slow animate__delay-1s">
           <img
-            src="https://img.freepik.com/premium-vector/programmer-working-modern-flat-concept-web-banner-design_428817-133.jpg?uid=R122666407&ga=GA1.1.1819474253.1716626039&semt=ais_user"
+            src="https://img.freepik.com/free-vector/flat-design-illustration-web-developers_23-2148817995.jpg?t=st=1722435420~exp=1722439020~hmac=ed983b4ea9e2b191711f1ac012e5fcf0b172f1286f359f39dc8c519b28f88080&w=740"
             className=" rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 border-2 border-white hover:border-purple-800 transition ease-in-out delay-100 hover:shadow-purple-600 "
             alt="Profile Picture"
           />
@@ -83,7 +83,7 @@ const BannerSection = () => {
           </div>
         </div>
       </div>
-      <MetricsSection />
+      {/* <MetricsSection /> */}
     </div>
   );
 };

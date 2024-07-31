@@ -7,13 +7,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import useIntersectionObserver from "./useIntersectionObserver";
 import "animate.css";
+import Ayush from "../assets/Ayush.jpg"
+import rishabh from "../assets/rishabh.png"
+import yogesh from "../assets/yogesh.jpg"
 
 const teamMembers = [
   {
-    name: "H. Alexander Anna",
-    position: "Managing Director",
-    image:
-      "https://www.absbio.com/hubfs/Successful%20smiling%20young%20male%20job%20applicant%20holding%20a%20blue%20file%20with%20his%20curriculum%20vitae%20posing%20in%20front%20of%20his%20new%20work%20colleagues%20or%20business%20team.jpeg",
+    name: "Ayush Butola",
+    position: "Software Developer",
+    image: Ayush,
     social: {
       linkedin: "https://www.linkedin.com/",
       twitter: "https://twitter.com/",
@@ -22,9 +24,9 @@ const teamMembers = [
     },
   },
   {
-    name: "Elizabeth Joseph",
-    position: "Managing Director",
-    image: "https://fekrait.com/uploads/topics/16750304198773.jpg",
+    name: "Rishabh Bhatt",
+    position: "Software Developer",
+    image: rishabh,
     social: {
       linkedin: "https://www.linkedin.com/",
       twitter: "https://twitter.com/",
@@ -33,10 +35,9 @@ const teamMembers = [
     },
   },
   {
-    name: "Benjamin Evelyn",
-    position: "Designer",
-    image:
-      "https://images.blog.airmason.com/wp-content/uploads/2023/10/Which-is-Correct-A-Employee-or-An-Employee-Exploring-the-Difference.png",
+    name: "Yogesh",
+    position: "Social Media Manager",
+    image: yogesh,
     social: {
       linkedin: "https://www.linkedin.com/",
       twitter: "https://twitter.com/",
@@ -134,7 +135,7 @@ const TeamSection = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-96 object-cover rounded"
+                  className="w-full h-96 object-cover rounded-full"
                 />
                 <div className="p-6">
                   <div className="flex justify-between items-center">

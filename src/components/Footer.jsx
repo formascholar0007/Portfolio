@@ -199,9 +199,7 @@ function Footer() {
                     <input
                       id="checked-checkbox"
                       type="checkbox"
-                      value=""
-                      className="w-5 h-5 aspect-square appearance-none cursor-pointer border border-gray-600 bg-transparent  rounded-md mr-2 hover:border-gray-400 hover:bg-gray-900 checked:bg-no-repeat checked:bg-center checked:border-gray-400 checked:bg-gray-800"
-                      checked=""
+                      className="rounded-full  mt-1 mr-2"
                     />
                     <label
                       for="checked-checkbox"
