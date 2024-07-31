@@ -36,7 +36,7 @@ const WorksSection = () => {
       title: "Architect",
       description: "Website Related To Architect",
       category: "Websites",
-      link: "https://best-architect-near-me.vercel.app/"
+      link: "https://architech-omega.vercel.app/"
     },
     {
       imageUrl: secondProject,
