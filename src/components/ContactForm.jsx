@@ -123,7 +123,7 @@ const ContactForm = () => {
                 href="tel:+01-123-654-8096"
                 className="text-purple-900 font-semibold text-lg hover:text-purple-500"
               >
-                +91 988 654 8096
+                +91 9045283510
               </a>
             </div>
           </li>
