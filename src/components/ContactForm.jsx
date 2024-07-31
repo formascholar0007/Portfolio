@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import useIntersectionObserver from "./useIntersectionObserver"; // Assuming you have this hook defined
 
 const ContactForm = () => {
   const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { fname, lname, email, phone, service, message } = formData;
+    const fullMessage = `Hello, my name is ${fname} ${lname}.\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`;
+    const whatsappURL = `https://wa.me/919045283510?text=${encodeURIComponent(fullMessage)}`;
+    window.open(whatsappURL, "_blank");
+  };
 
   return (
     <div
@@ -32,15 +53,17 @@ const ContactForm = () => {
           simple like that!
         </p>
 
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form_group">
               <input
                 type="text"
                 name="fname"
                 placeholder="First name"
-                className="w-full p-3 border-2 border-gray-500 bg-gray-100  rounded-md"
+                className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
                 required
+                value={formData.fname}
+                onChange={handleChange}
               />
             </div>
             <div className="form_group">
@@ -49,6 +72,8 @@ const ContactForm = () => {
                 name="lname"
                 placeholder="Last name"
                 className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
+                value={formData.lname}
+                onChange={handleChange}
               />
             </div>
             <div className="form_group">
@@ -58,6 +83,8 @@ const ContactForm = () => {
                 placeholder="Email address"
                 className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
                 required
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
             <div className="form_group">
@@ -67,19 +94,23 @@ const ContactForm = () => {
                 placeholder="Phone number"
                 className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded"
                 required
+                value={formData.phone}
+                onChange={handleChange}
               />
             </div>
           </div>
           <div className="form_group">
             <select
-              name="Services"
+              name="service"
               className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
               required
+              value={formData.service}
+              onChange={handleChange}
             >
               <option value="">—Please choose an option—</option>
-              <option value="Web Design">Web Development</option>
-              <option value="App Design">App Development</option>
-              <option value="Branding Design">Logo Design</option>
+              <option value="Web Development">Web Development</option>
+              <option value="App Development">App Development</option>
+              <option value="Logo Design">Logo Design</option>
               <option value="UI/UX Design">UI/UX Design</option>
               <option value="Have a question">Have a question</option>
             </select>
@@ -91,12 +122,14 @@ const ContactForm = () => {
               className="w-full p-3 border-2 border-gray-500 bg-gray-100 rounded-md"
               rows="5"
               required
+              value={formData.message}
+              onChange={handleChange}
             ></textarea>
           </div>
           <div className="">
             <button
               type="submit"
-              className="text-lg font-semibold rounded-full bg-gradient-to-r from-[#8c5be6] to-[#2a1454] text-white py-4 px-8  hover:text-black transition ease-in-out delay-100"
+              className="text-lg font-semibold rounded-full bg-gradient-to-r from-[#8c5be6] to-[#2a1454] text-white py-4 px-8 hover:text-black transition ease-in-out delay-100"
             >
               Send Message
             </button>
@@ -107,7 +140,7 @@ const ContactForm = () => {
       <div
         className={`mt-8 md:mt-0 md:ml-8 ${
           isVisible
-            ? "animate__animated animate__fadeInRight animate__slow  animate__delay-1s"
+            ? "animate__animated animate__fadeInRight animate__slow animate__delay-1s"
             : ""
         }`}
       >
@@ -128,7 +161,7 @@ const ContactForm = () => {
             </div>
           </li>
           <li className="flex items-center gap-6">
-            <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
+            <div className="bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
               <FaEnvelope className="text-white" size={25} />
             </div>
 
@@ -143,7 +176,7 @@ const ContactForm = () => {
             </div>
           </li>
           <li className="flex items-center gap-6">
-            <div className=" bg-gradient-to-r from-[#8c5be6] to-[#2a1454]  p-4 rounded-full">
+            <div className="bg-gradient-to-r from-[#8c5be6] to-[#2a1454] p-4 rounded-full">
               <FaMapMarkerAlt className="text-white" size={25} />
             </div>
 
