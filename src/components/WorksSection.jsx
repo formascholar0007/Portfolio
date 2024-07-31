@@ -28,21 +28,21 @@ const WorksSection = () => {
       imageUrl: thirdProject,
       title: "Dietitian Deepshikha Garg",
       description: "Dietitian Website",
-      category: "Logo",
+      category: "Websites",
       link: "https://www.dietitiandeepshikhagarg.com/"
     },
     {
       imageUrl: fourthProject,
       title: "Architect",
       description: "Website Related To Architect",
-      category: "Websites",
+      category: "UX/UI",
       link: "https://architech-omega.vercel.app/"
     },
     {
       imageUrl: secondProject,
       title: "Article Book Publisher",
       description: "Book Publisher Website",
-      category: "UX/UI",
+      category: "Websites",
       link: "https://articalbookpublication.com/ "
     },
   ];
