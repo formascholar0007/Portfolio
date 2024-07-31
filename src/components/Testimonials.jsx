@@ -43,30 +43,23 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
+      text: "I had the pleasure of working with Gredx to redesign our company's website, and I couldn't be more thrilled with the outcome. From the initial consultation to the final launch, the team was incredibly professional, attentive to detail, and responsive to our needs. They took our vision and turned it into a stunning, user-friendly website that has already started attracting more clients. The blend of modern design and functionality is impressive, and their commitment to delivering quality work is evident. Highly recommend Gredx to anyone looking for top-notch web development services!",
       author: "Dt. Deepshikha Garg",
       role: "distinguished dietician",
       avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
     {
       id: 2,
-      text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
-      author: "Dan Abramov",
-      role: "Creator, Java",
+      text: "Gredx transformed our online presence with their outstanding website design. As a book publisher, we needed a site that was both visually appealing and functional, and Gredx delivered beyond our expectations. The intuitive layout and seamless navigation have made it easier for our readers to explore our catalog and find new releases. Their team was incredibly responsive and attentive to our needs throughout the process. We couldn't be happier with the result!",
+      author: "Nitish Sharma",
+      role: "Book Publisher",
       avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
     {
       id: 3,
-      text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
-      author: "Dan Abramov",
-      role: "Creator, Java",
-      avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
-    },
-    {
-      id: 4,
-      text: "I felt disorganized. Pieces of paper everywhere. I was constantly making new lists, losing old ones, crossing off items and adding new ones. I was forever worried things were slipping and not getting done. My brain was tired.",
-      author: "Dan Abramov",
-      role: "Creator, Java",
+      text: "Working with Gredx was a game-changer for us. They took our vision for a modern, engaging book publisher's website and brought it to life with impressive creativity and technical expertise. The new site not only showcases our books beautifully but also integrates advanced features that enhance user experience. Gredx's professionalism and dedication were evident in every aspect of the project. We're thrilled with the outcome and have already seen a noticeable increase in user engagement!",
+      author: "Sahil Khan",
+      role: "Book Publisher",
       avatar: "https://cdn-icons-png.flaticon.com/128/17446/17446833.png",
     },
   ];
