@@ -1,8 +1,12 @@
+// TeamSection.js
+
 import React from "react";
 import Slider from "react-slick";
 import { FaLinkedin, FaFacebook, FaShareAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
+import useIntersectionObserver from "./useIntersectionObserver";
+import "animate.css";
 
 const teamMembers = [
   {
@@ -48,7 +52,7 @@ const TeamSection = () => {
     dotsClass: "slick-dots custom-dots-class",
     infinite: true,
     speed: 800,
-    autoplay: true, 
+    autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -63,18 +67,18 @@ const TeamSection = () => {
         },
       },
       {
-        breakpoint: 768, 
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1, 
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 480, 
+        breakpoint: 480,
         settings: {
-          slidesToShow: 1, 
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -83,11 +87,18 @@ const TeamSection = () => {
     ],
   };
 
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
   return (
-    <div className="text-black  md:py-28 py-12 lg:px-16 font-Sora">
+    <div
+      ref={sectionRef}
+      className="text-black md:py-28 py-12 lg:px-16 font-Sora"
+    >
       <div className="container mx-auto">
         <h2
-          className="text-4xl lg:text-6xl font-bold mb-6 text-center"
+          className={`text-4xl lg:text-6xl font-bold mb-6 text-center ${
+            isVisible ? "animate__animated animate__fadeIn animate__slow" : ""
+          }`}
           style={{
             background: "linear-gradient(to right, #c098f8, #42129d)",
             WebkitBackgroundClip: "text",
@@ -96,15 +107,30 @@ const TeamSection = () => {
         >
           Special Team Member
         </h2>
-        <p className="text-center md:text-md md:max-w-5xl mx-auto px-4 mb-12">
-          Praesent ut orci sodales, cursus mauris at, fringilla mi. Quisque
-          feugiat, libero vel pulvinar accumsan, mauris nulla malesuada dolor,
-          at varius mauris magna nec felis. In congue elit ligula.
+        <p
+          className={`text-center md:text-md md:max-w-5xl mx-auto px-4 mb-12 ${
+            isVisible
+              ? "animate__animated animate__fadeIn animate__slow  animate__delay-1s"
+              : ""
+          }`}
+        >
+          At GREDX, our strength lies in our people. Our team is a dynamic blend
+          of creative minds and technical experts, all driven by a shared
+          passion for innovation and excellence. Get to know the professionals
+          who are dedicated to turning your ideas into reality.
         </p>
         <Slider {...settings}>
           {teamMembers.map((member, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-zinc-900 text-white rounded overflow-hidden shadow-lg relative group px-5 py-5">
+            <div
+              ref={sectionRef}
+              key={index}
+              className={`p-4 ${
+                isVisible
+                  ? "animate__animated animate__fadeIn animate__slow  animate__delay-1s"
+                  : ""
+              }`}
+            >
+              <div className="bg-gray-50 text-purple-600 rounded overflow-hidden shadow-lg relative group px-5 py-5">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -118,31 +144,47 @@ const TeamSection = () => {
                     </div>
                     <div className="relative ">
                       <FaShareAlt
-                        className="text-white group-hover:text-zinc-900"
+                        className="text-purple-600 group-hover:text-gray-50"
                         size={22}
                       />
-                      <div className="absolute bottom-full w-full flex flex-col bg-zinc-900 rounded px-5 py-2 items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href={member.social.facebook} target="_blank">
+                      <div className="absolute bottom-full w-full flex flex-col bg-gray-100 rounded px-5 py-2 items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a
+                          href={member.social.facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FaFacebook
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
-                        <a href={member.social.twitter} target="_blank">
+                        <a
+                          href={member.social.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FaXTwitter
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
-                        <a href={member.social.linkedin} target="_blank">
+                        <a
+                          href={member.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FaLinkedin
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>
-                        <a href={member.social.instagram} target="_blank">
+                        <a
+                          href={member.social.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FaSquareInstagram
-                            className="text-gray-600 my-2 hover:text-gray-100"
+                            className="text-gray-600 my-2 hover:text-purple-600"
                             size={22}
                           />
                         </a>

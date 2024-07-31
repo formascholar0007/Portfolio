@@ -20,7 +20,6 @@ const Navbar = () => {
     setPrevScrollPos(currentScrollPos);
     setScrolled(currentScrollPos > 10);
 
-    // Determine which section is in view
     const sections = ["home", "services", "works", "technologies", "testimonials", "contact"];
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = document.getElementById(sections[i]);
